@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculate</title>
+    <link rel="icon" type="image/png" href="./assets/images/icons8-calculate-16.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <!-- Header page -->
+    <header>
+        <h1>BMI Calculator</h1>
+        <p class="headdesc">Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang
+            menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat.
+            Bagaimana denganmu? Yuk hitung sekarang di Kalkulator BMI.
+        </p>
+    </header>
+
+    <!-- Navbar -->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- <li style="float:right"><a class="active" href="#about">About</a></li> -->
+    </ul>
+
+    <!-- Content Web -->
+    <div class="container">
+        <section class="formBMI">
+            <h2>Form BMI</h2>
+
+            <!-- bagian form input -->
+            <div class="container-input">
+                <div>
+                    <strong>Jenis Kelamin</strong><br />
+                    <input id="r1" type="radio" name="pria" value="pria" onclick="checkedPria()">
+                    <label class="labelradio" for="pria" onclick="checkedPria()">Pria</label>
+                    <input id="r2" type="radio" name="wanita" value="wanita" onclick="checkedWanita()">
+                    <label class="labelradio" for="wanita" onclick="checkedWanita()">Wanita</label>
+                </div>
+                <div>
+                    <b for="beratbadan">Berat Badan (kg)</b><br />
+                    <input id="weight" type="number" name="beratbadan">
+                </div>
+                <div>
+                    <b for="usia">Usia (tahun)</b><br />
+                    <input id="age" type="number" name="usia">
+                </div>
+                <div>
+                    <b for="tinggibadan">Tinggi badan (cm)</b><br />
+                    <input id="height" type="number" name="tinggibadan">
+                </div>
+                <div>
+                    <button id="calc" class="btn" onclick="submitBMI()">Hitung BMI</button>
+                    <button id="reset" onclick="reset()">Reset</button>
+                </div>
+            </div>
+
+            <!-- detail tulisan -->
+            <div class="container-detail">
+                <h3>Keunggulan fitur</h3>
+                <a>1. Menghitung berat badan</a><br />
+                <a>2. Menentukan kategori berat badan ideal atau tidak</a><br />
+                <a>3. Mempersiapkan program penurunan berat badan</a><br />
+
+
+                <p>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh
+                    mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya
+                    selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter</p>
+
+
+                <p>Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks
+                    Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat
+                    tinggi badan Anda (dalam meter) atau BMI = Kg/M<sup>2</sup></p>
+
+            </div>
+
+
+        </section>
+
+        <div class="barrier"></div>
+
+        <section class="resultBMI">
+            <h2>Hasil</h2>
+
+            <!-- Tampilan hasil dari perhitungan -->
+            <div class="container-result">
+                <p id="resulttitle"><i style="color:darkgray">Berat Badan Lebih/Kurang</i></p>
+                <strong id="resultnumber" style="font-size: 20px;">0</strong>
+                <p id="resultdesc"><i style="color:darkgray">kondisi berat badan</i></p>
+                <button class="btn">Download Hasil BMI</button>
+            </div>
+
+            <div class="suggestbox">
+                <p id="additional">Keterangan: -</p>
+                <p id="resultrange"></p>
+                <p id="suggest"></p>
+            </div>
+            <div class="consultation">
+                <button class="btn">Konsultasi Ahli Gizi Via Aplikasi</button>
+                <button class="btn">Registrasi Online Ahli Gizi</button>
+            </div>
+            <div>
+                <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyaki seseorang.
+                    Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan
+                    anda</p>
+            </div>
+
+            <div class="consultation">
+                <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
+                <div class="disease">
+                    <a href="https://www.halodoc.com/kesehatan/diabetes" target="_blank">
+                        <p id="disease1" class="disease-content" style="background-color: darkgreen;">Diabetes</p>
+                    </a>
+                    <a href="https://www.halodoc.com/kesehatan/hipertensi" target="_blank">
+                        <p id="disease2" class="disease-content" style="background-color: darkcyan;">Hipertensi</p>
+                    </a>
+                    <a href="https://www.halodoc.com/kesehatan/jantung" target="_blank">
+                        <p id="disease3" class="disease-content" style="background-color: lightsalmon;">Sakit Jantung</p>
+                    </a>
+                    <a href="https://www.halodoc.com/kesehatan/osteoarthritis" target="_blank">
+                        <p id="disease4" class="disease-content" style="background-color: darkgoldenrod;">Osteoarthritis</p>
+                    </a>
+                </div>
+                <i style="font-size: 10px;">*klik untuk penjelasan penyakit lebih lanjut</i>
+
+                <div>
+                    <br />
+                    <button class="btn">Konsultasi Dokter Via Aplikasi</button>
+                    <button class="btn">Registrasi Online Sekarang</button>
+                </div>
+                <div>
+                    <br />
+                    <a href="https://apps.apple.com/id/app/halodoc-doctors-medicines/id1067217981" target="_blank">
+                        <img id="storepic" src="./assets/images/App-Store.png">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.linkdokter.halodoc.android&hl=en&gl=US&pli=1" target="_blank">
+                        <img id="storepic" src="./assets/images/Google-Play.png">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+
+    <footer>
+        <p>Build by.<br />
+            Dea Kurnia Harysandi
+        </p>
+
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
